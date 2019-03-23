@@ -38,7 +38,6 @@ app.post('/mail', function(req, res) {
         res.sendStatus(200)
     })
 })
-
-app.listen(8004, function() {
+app.listen(process.env.PORT || 5000, function() {
     console.log("Server started at port 8004")
 })
