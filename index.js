@@ -2,14 +2,16 @@
 var nodemailer = require("nodemailer");
 var express = require('express')
 var bodyParser = require('body-parser')
+var cors = require('cors')
 
 var app = express()
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
+    // parse application/json
 app.use(bodyParser.json())
+app.use(cors())
+
 
 app.get('/', function(req, res) {
     res.send("Mail server started.")
