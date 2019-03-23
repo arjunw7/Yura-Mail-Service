@@ -25,7 +25,7 @@ app.post('/mail', function(req, res) {
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"Dennis Roelfsen 👻" <dennis@yura.agency>', // sender address
-        to: "arjunw7@gmail.com", // list of receivers
+        to: "dennis@yura.agency", // list of receivers
         subject: "noreply@yura.agency - Arjun Wadhws", // Subject line
         text: "Hi Dennis, \nMy name is " + req.body.name + ". I work for " + req.body.company + " and I am in need of a partner to assist me with " + req.body.message + ". You can reach me at " + req.body.email + " or " + req.body.phone + " to get the conversation started.\n\nThanks!"
     };
