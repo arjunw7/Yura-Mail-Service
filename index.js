@@ -40,6 +40,31 @@ app.post('/mail', function(req, res) {
         res.sendStatus(200)
     })
 })
+
+app.post('/blockchainQuery', function(req, res) {
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'yura.agency@gmail.com',
+            pass: '13bcb0062'
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"Dennis Roelfsen 👻" <dennis@yura.agency>', // sender address
+        to: "dennis@yura.agency", // list of receivers
+        subject: "noreply@yura.agency - Arjun Wadhws", // Subject line
+        text: "Hi Dennis, \nMy name is " + req.body.fullName + ". I am from " + req.body.location + ". You can reach me at " + req.body.email + " or " + req.body.phone + " to get the conversation started.\n\nThanks!"
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function() {
+        res.sendStatus(200)
+    })
+})
+
 app.listen(process.env.PORT || 5000, function() {
     console.log("Server started at port 8004")
 })
