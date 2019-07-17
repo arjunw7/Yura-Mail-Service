@@ -19,19 +19,21 @@ app.get('/', function(req, res) {
 
 app.post('/mail', function(req, res) {
 
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
+    let transporter = nodemailer.createTransport({
+        host: "smtp.transip.email",
+        port: 465,
+        secure: true,
         auth: {
-            user: 'yura.agency@gmail.com',
-            pass: '13bcb0062'
+            user: "admin@yura.agency",
+            pass: "EmailAdmin2019"
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"Dennis Roelfsen 👻" <dennis@yura.agency>', // sender address
+        from: '"Yura Agency 👻" <noreply@yura.agency>', // sender address
         to: "dennis@yura.agency", // list of receivers
-        subject: "noreply@yura.agency - Arjun Wadhws", // Subject line
+        subject: "Customer Query - Yura.agency", // Subject line
         text: "Hi Dennis, \nMy name is " + req.body.name + ". I work for " + req.body.company + " and I am in need of a partner to assist me with " + req.body.message + ". You can reach me at " + req.body.email + " or " + req.body.phone + " to get the conversation started.\n\nThanks!"
     };
 
@@ -43,19 +45,22 @@ app.post('/mail', function(req, res) {
 
 app.post('/blockchainQuery', function(req, res) {
 
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
+    let transporter = nodemailer.createTransport({
+        host: "smtp.transip.email",
+        port: 465,
+        secure: true,
         auth: {
-            user: 'yura.agency@gmail.com',
-            pass: '13bcb0062'
+            user: "admin@yura.agency",
+            pass: "EmailAdmin2019"
         }
     });
 
+
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"Dennis Roelfsen 👻" <dennis@yura.agency>', // sender address
+        from: '"Yura Agency 👻" <noreply@yura.agency>', // sender address
         to: "dennis@yura.agency", // list of receivers
-        subject: "noreply@yura.agency - Arjun Wadhws", // Subject line
+        subject: "Blockchain Query - Yura.agency", // Subject line
         text: "Hi Dennis, \nMy name is " + req.body.fullName + ". I am from " + req.body.location + ". You can reach me at " + req.body.email + " or " + req.body.phone + " to get the conversation started.\n\nThanks!"
     };
 
